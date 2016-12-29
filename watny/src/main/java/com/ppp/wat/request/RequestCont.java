@@ -10,11 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ppp.wat.chiefapplicant.ChiefApplicantDAO;
+
 @Controller
 public class RequestCont {
 
 	@Autowired
 	private RequestDAO dao;
+	@Autowired
+	private ChiefApplicantDAO cadao;
 
 	public RequestCont() {
 		System.out.println("RequestCont() °´Ã¼ »ý¼ºµÊ");
@@ -51,8 +55,10 @@ public class RequestCont {
 	public ModelAndView read(int rq_no, HttpServletRequest req) {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/request/read");
+		int count_all = cadao.count_all(rq_no);
 		RequestDTO dto = dao.read(rq_no);
 		mav.addObject("dto", dto);
+		mav.addObject("count_all", count_all);
 		return mav;
 	}// read() end
 

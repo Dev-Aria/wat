@@ -9,3 +9,5 @@ CREATE TABLE chiefapplicant (		-- 의뢰공고 팀장 신청자 Tb
 	ca_newdate	 DATETIME		NOT NULL,				
 	ca_select	 VARCHAR(10)	NOT NULL 	default 'N'
 );
+
+select * from chiefapplicant;

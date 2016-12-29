@@ -12,7 +12,7 @@
 			<div class="span3 sidebar">
 				<h4>프로젝트</h4>
 				<ul class="nav nav-tabs nav-stacked">
-					<li><a href="../sproject/list.do">팀원모집공고</a></li>
+					<li><a href="../sproject/list.do" style="background-color: #7ED2FF; color: #000000;">팀원모집공고</a></li>
 					<li><a href="../request/list.do">프로젝트의뢰</a></li>
 					<li><a href="#">프로젝트판매</a></li>
 					<li><a href="#">프로젝트완료</a></li>
@@ -28,95 +28,76 @@
 							<table class='table'>
 								<tr>
 									<th>구분</th>
-									<td>
-									<c:choose>
-									<c:when test="${dto.sp_code=='S' }"> 스터디
+									<td colspan="2"><c:choose>
+											<c:when test="${dto.sp_code=='S' }"> 스터디
 									</c:when>
-									<c:when test="${dto.sp_code=='P' }"> 프로젝트
+											<c:when test="${dto.sp_code=='P' }"> 프로젝트
 									</c:when>
-									</c:choose></td>
+										</c:choose></td>
 								</tr>
 								<tr>
 									<th>번호</th>
-									<td>${dto.sp_no }</td>
+									<td colspan="2">${dto.sp_no }</td>
 								</tr>
 								<tr>
 									<th>팀장</th>
-									<td>${dto.sp_id }</td>
+									<td colspan="2">${dto.sp_id }</td>
 								</tr>
 								<tr>
 									<th>제목</th>
-									<td>${dto.sp_title }</td>
+									<td colspan="2">${dto.sp_title }</td>
 								</tr>
 								<tr>
 									<th>내용</th>
-									<td>${dto.sp_content }</td>
+									<td colspan="2">${dto.sp_content }</td>
 								</tr>
 								<tr>
 									<th>개발시작</th>
-									<td>${dto.sp_startdate }</td>
+									<td colspan="2">${dto.sp_startdate }</td>
 								</tr>
 								<tr>
 									<th>개발종료</th>
-									<td>${dto.sp_findate }</td>
-								</tr>
-								<tr>
-									<th colspan="4" style="text-align: center;">T.O(명)</th>
-								</tr>
-								<tr>
-									<th>DB</th>
-									<td>${dto.sp_dbcnt }명</td>
-								</tr>
-								<tr>
-									<th>UI</th>
-									<td>${dto.sp_uicnt }명</td>
-								</tr>
-								<tr>
-									<th>BackEnd</th>
-									<td>${dto.sp_backcnt }명</td>
-								</tr>
-								<tr>
-									<th>Server</th>
-									<td>${dto.sp_servercnt }명</td>
-								</tr>
-								<tr>
-									<th>ETC</th>
-									<td>${dto.sp_etccnt }명</td>
-								</tr>
-								<tr>
-									<th colspan="4" style="text-align: center;">보수(%)</th>
+									<td colspan="2">${dto.sp_findate }</td>
 								</tr>
 								<tr>
 									<th>입찰금액</th>
-									<td>${dto.sp_pay }원</td>
+									<td colspan="2">${dto.sp_pay }원</td>
+								</tr>
+								<tr>
+									<th></th><th>T.O(명)</th> <th>보수(%)</th>
 								</tr>
 								<tr>
 									<th>DB</th>
+									<td>${dto.sp_dbcnt }명</td>									
 									<td>${dto.sp_dbpay }%</td>
 								</tr>
 								<tr>
 									<th>UI</th>
+									<td>${dto.sp_uicnt }명</td>
 									<td>${dto.sp_uipay }%</td>
 								</tr>
 								<tr>
 									<th>BackEnd</th>
+									<td>${dto.sp_backcnt }명</td>
 									<td>${dto.sp_backpay }%</td>
 								</tr>
 								<tr>
 									<th>Server</th>
+									<td>${dto.sp_servercnt }명</td>
 									<td>${dto.sp_serverpay }%</td>
 								</tr>
 								<tr>
 									<th>ETC</th>
+									<td>${dto.sp_etccnt }명</td>
 									<td>${dto.sp_etcpay }%</td>
 								</tr>
 								<tr>
 									<th>모집시작</th>
-									<td>${dto.sp_newdate }</td>
+									<td colspan="2">${dto.sp_newdate }</td>
 								</tr>
 								<tr>
 									<th>모집마감</th>
-									<td>${dto.sp_enddate }</td>
+									<td colspan="2">${dto.sp_enddate }</td>
 								</tr>
 							</table>
 						</div>
@@ -128,8 +109,10 @@
 								type='button' value='삭제'
 								onclick="location.href='./delete.do?sp_no=${dto.sp_no }'">
 							<hr>
-							<br> 팀원신청인원 : &nbsp;명 &nbsp; <input type='button'
-								value='팀원신청'
+							<br> 팀원신청인원 : 총&nbsp;${count_all }&nbsp;명 <br> DB : &nbsp;${count_db }명 &nbsp;&nbsp;&nbsp;
+							UI : &nbsp;${count_ui }명 &nbsp;&nbsp;&nbsp;BackEnd : &nbsp;${count_back }명 &nbsp;&nbsp;&nbsp; Server :
+							&nbsp;${count_server }명 &nbsp;&nbsp;&nbsp; ETC : &nbsp;${count_etc }명 &nbsp;&nbsp;&nbsp; <input
+								type='button' value='팀원신청'
 								onclick="location.href='../spapply/create.do?spa_code=${dto.sp_code }&spa_no=${dto.sp_no }'">
 						</div>
 					</FORM>

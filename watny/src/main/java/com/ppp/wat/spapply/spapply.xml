@@ -26,10 +26,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- 팀원신청 등록 -->
 	<insert id="create">
-		<selectKey keyProperty="spa_no" resultType="int" order="BEFORE">
-			SELECT IFNULL(MAX(spa_no), 0)+1 as spa_no
-			FROM spapply
-		</selectKey>
 		INSERT INTO spapply(spa_code, spa_no, spa_part, spa_id, 
 			  				spa_memo, spa_select)
 		VALUES(#{spa_code}, #{spa_no}, #{spa_part}, 'nayoung', 
@@ -52,5 +48,49 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 
 
+
+
+
+	<!-- 팀원신청자 수 가져오기 -->
+	<select id="count_all" resultType="int">
+		SELECT count(spa_no)
+		FROM spapply
+		WHERE spa_no = #{spa_no}
+	</select>
+
+	<!-- DB신청자 수 가져오기 -->
+	<select id="count_db" resultType="int">
+		SELECT count(spa_id)
+		FROM spapply
+		WHERE spa_no=#{spa_no} and spa_part='db'
+	</select>
+
+	<!-- UI신청자 수 가져오기 -->
+	<select id="count_ui" resultType="int">
+		SELECT count(spa_id)
+		FROM spapply
+		WHERE spa_no=#{spa_no} and spa_part='ui'
+	</select>
+
+	<!-- BackEnd신청자 수 가져오기 -->
+	<select id="count_back" resultType="int">
+		SELECT count(spa_id)
+		FROM spapply
+		WHERE spa_no=#{spa_no} and spa_part='back'
+	</select>
+
+	<!-- Server신청자 수 가져오기 -->
+	<select id="count_server" resultType="int">
+		SELECT count(spa_id)
+		FROM spapply
+		WHERE spa_no=#{spa_no} and spa_part='server'
+	</select>
+
+	<!-- ETC신청자 수 가져오기 -->
+	<select id="count_etc" resultType="int">
+		SELECT count(spa_id)
+		FROM spapply
+		WHERE spa_no=#{spa_no} and spa_part='etc'
+	</select>
 
 </mapper>

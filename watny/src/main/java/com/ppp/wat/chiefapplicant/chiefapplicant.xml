@@ -56,5 +56,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 
 
+	<!-- 팀장신청자 수 가져오기 -->
+	<select id="count_all" resultType="int">
+		SELECT count(ca_rqno)
+		FROM chiefapplicant
+		WHERE ca_rqno = #{ca_rqno}
+	</select>
 
 </mapper>

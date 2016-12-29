@@ -55,6 +55,15 @@ public class ChiefApplicantDAO {
 		int count = mapper.update(dto);
 		return count;
 	}
+	
+
+	// 팀장신청수 가져오기
+	public int count_all(int ca_no){
+		ChiefApplicantMapper mapper = sqlSession.getMapper(ChiefApplicantMapper.class);
+		int count = mapper.count_all(ca_no);
+		return count;
+	}// count_all() end
+
 
 
 }// class end

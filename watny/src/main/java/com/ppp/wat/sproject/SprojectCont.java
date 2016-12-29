@@ -10,11 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ppp.wat.chiefapplicant.ChiefApplicantDAO;
+import com.ppp.wat.spapply.SpApplyDAO;
+
 @Controller
 public class SprojectCont {
 
 	@Autowired
 	private SprojectDAO dao;
+	@Autowired
+	private SpApplyDAO spadao;
 
 	public SprojectCont() {
 		System.out.println("SprojectCont() °´Ã¼ »ý¼ºµÊ");
@@ -53,6 +58,24 @@ public class SprojectCont {
 		mav.setViewName("/sproject/read");
 		SprojectDTO dto = dao.read(sp_no);
 		mav.addObject("dto", dto);
+		
+		int count_all = spadao.count_all(sp_no);
+		mav.addObject("count_all", count_all);
+		
+		int count_db = spadao.count_db(sp_no);
+		mav.addObject("count_db", count_db);
+		
+		int count_ui = spadao.count_ui(sp_no);
+		mav.addObject("count_ui", count_ui);
+		
+		int count_back = spadao.count_back(sp_no);
+		mav.addObject("count_back", count_back);
+		
+		int count_server = spadao.count_server(sp_no);
+		mav.addObject("count_server", count_server);
+		
+		int count_etc = spadao.count_etc(sp_no);
+		mav.addObject("count_etc", count_etc);
 		return mav;
 	}// read() end
 

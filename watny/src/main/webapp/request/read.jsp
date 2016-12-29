@@ -13,7 +13,7 @@
 				<h4>프로젝트</h4>
 				<ul class="nav nav-tabs nav-stacked">
 					<li><a href="../sproject/list.do">팀원모집공고</a></li>
-					<li><a href="../request/list.do">프로젝트의뢰</a></li>
+					<li><a href="../request/list.do" style="background-color: #7ED2FF; color: #000000;">프로젝트의뢰</a></li>
 					<li><a href="#">프로젝트판매</a></li>
 					<li><a href="#">프로젝트완료</a></li>
 				</ul>
@@ -61,16 +61,16 @@
 							</table>
 						</div>
 						<div class='bottom'>
+							<hr>
+							<br> 팀장신청인원 : &nbsp;${count_all }명 &nbsp; <input type='button'
+								value='팀장신청'
+								onclick="location.href='../chiefapplicant/create.do?ca_rqno=${dto.rq_no }'">
 							<input type='button' value='수정'
 								onclick="location.href='./update.do?rq_no=${dto.rq_no }'">
 							<input type='button' value='목록'
 								onclick="location.href='./list.do'"> <input
 								type='button' value='삭제'
 								onclick="location.href='./delete.do?rq_no=${dto.rq_no }'">
-							<hr>
-							<br> 팀장신청인원 : &nbsp;명 &nbsp; <input type='button'
-								value='팀장신청'
-								onclick="location.href='../chiefapplicant/create.do?ca_rqno=${dto.rq_no }'">
 						</div>
 
 					</FORM>

@@ -25,7 +25,7 @@ public class SpApplyCont {
 		System.out.println("SpApplyCont() 객체 생성됨");
 	}
 
-	// 결과확인 http://localhost:9090/wat/chiefapplicant/list.do
+	// 결과확인 http://localhost:9090/wat/spapply/list.do
 	@RequestMapping("/spapply/list.do")
 	public ModelAndView list() {
 		ModelAndView mav = new ModelAndView();
@@ -36,11 +36,10 @@ public class SpApplyCont {
 	}// list() end
 
 	@RequestMapping(value = "/spapply/create.do", method = RequestMethod.GET)
-	public ModelAndView createForm(int spa_no, SpApplyDTO dto) {
+	public ModelAndView createForm(SpApplyDTO dto) {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/spapply/createForm");
-		SprojectDTO spdto = spdao.read(spa_no);
-		mav.addObject("spa_rqno", spa_no);
+		mav.addObject("spa_code", dto.getSpa_code());
 		mav.addObject("spa_no", dto.getSpa_no());
 		return mav;
 	}// createForm() end
@@ -49,7 +48,7 @@ public class SpApplyCont {
 	public ModelAndView createProc(SpApplyDTO dto, HttpServletRequest req) {
 		ModelAndView mav = new ModelAndView();
 		int count = dao.create(dto);
-		mav.setViewName("redirect:/spapply/list.do");
+		mav.setViewName("redirect:/sproject/read.do?sp_no="+dto.getSpa_no());
 		mav.addObject("count", count);
 		return mav;
 	}// createProc() end

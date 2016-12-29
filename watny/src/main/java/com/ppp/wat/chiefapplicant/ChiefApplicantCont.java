@@ -39,7 +39,6 @@ public class ChiefApplicantCont {
 	public ModelAndView createForm(int ca_rqno, ChiefApplicantDTO dto) {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/chiefapplicant/createForm");
-		RequestDTO rqdto = rqdao.read(ca_rqno);
 		mav.addObject("ca_rqno", ca_rqno);
 		mav.addObject("ca_no", dto.getCa_no());
 		return mav;
@@ -49,7 +48,7 @@ public class ChiefApplicantCont {
 	public ModelAndView createProc(ChiefApplicantDTO dto, HttpServletRequest req) {
 		ModelAndView mav = new ModelAndView();
 		int count = dao.create(dto);
-		mav.setViewName("redirect:/chiefapplicant/list.do");
+		mav.setViewName("redirect:/request/read.do?rq_no="+dto.getCa_rqno());
 		mav.addObject("count", count);
 		return mav;
 	}// createProc() end

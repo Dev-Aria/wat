@@ -12,7 +12,7 @@
 			<div class="span3 sidebar">
 				<h4>프로젝트</h4>
 				<ul class="nav nav-tabs nav-stacked">
-					<li><a href="../sproject/list.do">팀원모집공고</a></li>
+					<li><a href="../sproject/list.do" style="background-color: #7ED2FF; color: #000000;">팀원모집공고</a></li>
 					<li><a href="../request/list.do">프로젝트의뢰</a></li>
 					<li><a href="#">프로젝트판매</a></li>
 					<li><a href="#">프로젝트완료</a></li>
@@ -59,8 +59,7 @@
 						</table>
 
 						<DIV class='bottom'>
-							<input type='submit' value='등록'> <input type='button'
-								value='목록' onclick="location.href='../request/list.do'">
+							<input type='submit' value='등록'> 
 						</DIV>
 					</FORM>
 				</div>
