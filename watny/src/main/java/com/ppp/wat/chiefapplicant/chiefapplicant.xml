@@ -37,7 +37,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			   						ca_newdate, ca_select)
 		VALUES(#{ca_no}, #{ca_rqno}, 'nayoung', 
 				#{ca_price}, #{ca_date}, #{ca_memo},
-				now(), 0 )
+				now(), 'N' )
 	</insert>
 
 
@@ -51,7 +51,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 팀장신청 수정 -->
 	<update id="update">
 		UPDATE chiefapplicant
-		SET ca_price=#{ca_price}, ca_date=#{ca_date}, ca_memo=#{ca_memo}
+		SET ca_price=#{ca_price}, ca_date=#{ca_date}, ca_memo=#{ca_memo}, ca_select=#{ca_select}
 		WHERE ca_no = #{ca_no}
 	</update>
 

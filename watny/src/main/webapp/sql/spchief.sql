@@ -4,3 +4,5 @@ CREATE TABLE spchief(			-- ÆÀÀå °øÁö Tb
 	spc_no			INT					not null,
 	spc_feedback	VARCHAR(10)			not null
 );
+
+select * from spchief;

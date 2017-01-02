@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ppp.wat.sproject.SprojectDAO;
-import com.ppp.wat.sproject.SprojectDTO;
 
 @Controller
 public class SpApplyCont {

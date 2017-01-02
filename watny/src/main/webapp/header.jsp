@@ -1,7 +1,10 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
-<!DOCTYPE html>
-<html lang="ko">
+<%@ page contentType="text/html; charset=utf-8"%>
+<html>
 <head>
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript"
@@ -20,38 +23,38 @@
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbarfixed-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#myNavbar">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="../home.jsp"><img height="25" alt="Brand"
-					src="../images/w logo.png"></a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-user"></span></a>
-					</li>
-					<li><a href="#nav-collapse3" class="btn collapsed"
-						data-toggle="collapse" aria-expanded="false"
-						aria-controls="nav-collapse3"><span
-							class="glyphicon glyphicon-search"></span></a></li>
-				</ul>
-				<div class="collapse nav navbar-nav nav-collapse slide-down"
-					id="nav-collapse3">
-					<form class="navbar-form navbar-right" role="search">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search">
-						</div>
-						<button type="submit" class="btn btn-default">
-							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-						</button>
-					</form>
-				</div>
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#myNavbar">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="../home.jsp"><img height="25"
+				alt="Brand" src="../images/w logo.png"></a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span></a>
+				</li>
+				<li><a href="#nav-collapse3" class="btn collapsed"
+					data-toggle="collapse" aria-expanded="false"
+					aria-controls="nav-collapse3"><span
+						class="glyphicon glyphicon-search"></span></a></li>
+			</ul>
+			<div class="collapse nav navbar-nav nav-collapse slide-down"
+				id="nav-collapse3">
+				<form class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-default">
+						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					</button>
+				</form>
 			</div>
 		</div>
+	</div>
 	</nav>
 	<!-- top navbar end ----------------------------------------------->
 	<!-- Carousel==================================================- ->
@@ -114,34 +117,35 @@
 	<!-- carousel end------------------------------------------------- -->
 	<!-- second nav bar -------------------------------------------------->
 	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand"><img height="30" alt="Brand"
-					src="../images/w logo.png"></a>
-			</div>
-			<ul class="nav navbar-nav">
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#"> COMMUNITY <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#"> Q&amp;A</a></li>
-						<li><a href="#"> 칼럼 </a></li>
-					</ul></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#"> 자료실 <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#"> 라이브러리 </a></li>
-						<li><a href="#"> 오픈소스 </a></li>
-						<li><a href="#"> 시뮬레이터 </a></li>
-					</ul></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#"> 프로젝트 <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="../sproject/list.do"> 팀원모집공고 </a></li>
-						<li><a href="#"> 프로젝트 의뢰 </a></li>
-						<li><a href="#"> 프로젝트 완료 </a></li>
-						<li><a href="#"> 프로젝트 판매 </a></li>
-					</ul></li>
-			</ul>
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand"><img height="30" alt="Brand"
+				src="../images/w logo.png"></a>
 		</div>
+		<ul class="nav navbar-nav">
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="#"> COMMUNITY <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#"> Q&amp;A</a></li>
+					<li><a href="#"> 칼럼 </a></li>
+				</ul></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="#"> 자료실 <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#"> 라이브러리 </a></li>
+					<li><a href="#"> 오픈소스 </a></li>
+					<li><a href="#"> 시뮬레이터 </a></li>
+				</ul></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="#"> 프로젝트 <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#"> 팀원모집공고 </a></li>
+					<li><a href="#"> 프로젝트 의뢰 </a></li>
+					<li><a href="#"> 프로젝트 완료 </a></li>
+					<li><a href="#"> 프로젝트 판매 </a></li>
+				</ul></li>
+		</ul>
+	</div>
 	</nav>
-	<!-- header end---------------------------------------->
+	<div class="section">
+		<div class="container">

@@ -9,7 +9,7 @@
     <style>
 </style>
   </head><body>
-    <nav class="navbar navbar-inverse navbarfixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -21,8 +21,39 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="#"><span class="glyphicon glyphicon-user"></span></a>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></a>
+              <ul id="login-dp" class="dropdown-menu">
+                <li>
+                  <div class="row">
+                    <div class="col-lg-12">LOGIN
+                      <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                        <div class="form-group">
+                          <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required="">
+                        </div>
+                        <div class="form-group">
+                          <label class="sr-only" for="exampleInputPassword2">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required="">
+                          <div class="help-block text-right">
+                            <a href="">Forget the password ?</a>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                        </div>
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox">keep me logged-in</label>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="bottom text-center">New here ?
+                      <a href="#"><b>Join Us</b></a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </li>
             <li>
               <a href="#nav-collapse3" class="btn collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="nav-collapse3"><span class="glyphicon glyphicon-search"></span></a>
@@ -43,6 +74,7 @@
     </nav>
     <!-- top navbar end ----------------------------------------------->
     <!-- Carousel==================================================- ->
+
   <!-- Indicators -->
     <div class="carousel slide" id="myCarousel" data-interval="3500" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -90,10 +122,14 @@
       </div>
       <!-- Controls -->
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+
     <span class="icon-prev"></span>
+
   </a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next">
+
     <span class="icon-next"></span>
+
   </a>
     </div>
     <!-- carousel end------------------------------------------------- -->

@@ -1,27 +1,13 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page contentType="text/html; charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="../header.jsp"%>
+<%@ include file="../sProLeftTemp.jsp" %>
 <%
 	request.setCharacterEncoding("utf-8");
 %>
 
 <!-- body start -------------------------------------->
-<div class="section">
-	<div class="container">
-		<div class="col-md-2">
-			<div class="span3 sidebar">
-				<h4>프로젝트</h4>
-				<ul class="nav nav-tabs nav-stacked">
-					<li><a href="../sproject/list.do" style="background-color: #7ED2FF; color: #000000;">팀원모집공고</a></li>
-					<li><a href="../request/list.do">프로젝트의뢰</a></li>
-					<li><a href="#">프로젝트판매</a></li>
-					<li><a href="#">프로젝트완료</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="col-md-10">
-			<div class="row-fluid" id="content">
-				<div class="span8 main">
+
 					<h3 style="text-align: center;">팀원신청 상세보기</h3>
 					<FORM name='frm' method='POST' action='./update.do'>
 						<div class='table'>
@@ -59,21 +45,16 @@
 								</tr>
 							</table>
 						</div>
-						<div class='bottom'>
-							<input type='button' value='수정'
+						<div class='bottom' style="float: right;">
+							<input type='button' value='수정' class="btn btn-default" 
 								onclick="location.href='./update.do?ca_no=${dto.ca_no }'">
-							<input type='button' value='목록'
+							<input type='button' value='목록' class="btn btn-default" 
 								onclick="location.href='./list.do'"> 
-							<input type='button' value='삭제'
+							<input type='button' value='삭제' class="btn btn-default" 
 								onclick="location.href='./delete.do?ca_no=${dto.ca_no }'">
 						</div>
 
 					</FORM>
-				</div>
-			</div>
-		</div>
 
-	</div>
-</div>
 <!-- body end -------------------------------------->
 <%@ include file="../footer.jsp"%>

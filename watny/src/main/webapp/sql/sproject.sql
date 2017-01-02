@@ -42,7 +42,11 @@ Insert into
 sproject(sp_code, sp_no, sp_rqno, sp_id, sp_title, sp_content, sp_pay, sp_startdate, sp_findate, 
          sp_dbcnt, sp_uicnt, sp_backcnt, sp_servercnt, sp_etccnt, sp_dbpay, sp_uipay, 
          sp_backpay, sp_serverpay, sp_etcpay, sp_state, sp_newdate, sp_enddate)
-values('S', 2, null, 'habin', '제목입니다', '내용입니다.', 0, '2017-01-02 10:00:51', '2017-01-15 12:23:55',
-       1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, '2016-12-23 12:23:55', null);
+values('S', 4, null, 'habin', '제목입니다', '내용입니다.', 0, '2017-01-02 10:00:51', '2017-01-15 12:23:55',
+       1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 2, '2016-12-23 12:23:55', null);
        
+       
+UPDATE sproject
+SET sp_state=2
+WHERE sp_no=2;
        

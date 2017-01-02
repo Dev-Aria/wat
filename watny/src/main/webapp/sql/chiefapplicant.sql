@@ -11,3 +11,6 @@ CREATE TABLE chiefapplicant (		-- 의뢰공고 팀장 신청자 Tb
 );
 
 select * from chiefapplicant;
+
+UPDATE chiefapplicant
+SET ca_select='N'
