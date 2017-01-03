@@ -13,7 +13,7 @@
 	<div class='table'>
 		<table class='table'>
 			<tr>
-				<th>번호</th>
+				<th>No.</th>
 				<td>${dto.rq_no }</td>
 			</tr>
 			<tr>
@@ -33,12 +33,8 @@
 				<td>${dto.rq_templete }</td>
 			</tr>
 			<tr>
-				<th>팀장모집시작</th>
-				<td>${dto.rq_newdate }</td>
-			</tr>
-			<tr>
-				<th>팀장모집마감</th>
-				<td>${dto.rq_enddate }</td>
+				<th>모집기간</th>
+				<td>${dto.rq_newdate } ~ ${dto.rq_enddate }</td>
 			</tr>
 			<tr>
 				<th>진행상태</th>

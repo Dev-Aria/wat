@@ -32,22 +32,19 @@
 		</tr>
 		<tr>
 			<th>내용</th>
-			<td colspan="2"><%@ include
-					file="../daumOpenEditor/editor_frame.jsp"%></td>
-			<!-- <td><textarea rows="10" cols="55" name="sp_content">개발에 관련된 세부 설명을 적어주시면 됩니다.
+			<td colspan="2">
+			<%-- <%@ include file="../daumOpenEditor/editor_frame.jsp"%>
+			</td> --%>
+			<textarea rows="10" cols="55" name="sp_content">개발에 관련된 세부 설명을 적어주시면 됩니다.
 개발파트 중 ETC(기타)에 해당 하는 항목은 가장 아래에 기재해주세요.
-					</textarea></td> -->
+					</textarea></td>
 		</tr>
 		<tr>
 			<th>개발기간</th>
-			<td>
-				<input type="text" id="sp_startdate" name="sp_startdate" value="날짜 선택" 
-					onclick="fnPopUpCalendar(sp_startdate,sp_startdate,'yyyy-mm-dd')" size=8
-					class='text_box1'>
-				 ~ 
-				<input type="text" id="sp_findate" name="sp_findate" value="날짜 선택"
-					onclick="fnPopUpCalendar(sp_findate,sp_findate,'yyyy-mm-dd')" size=8
-					class='text_box1'>
+			<td colspan="2">
+				<input type="text" id="sp_startdate" name="sp_startdate" size=8 readonly> 
+				~<input type="text"	id="sp_findate" name="sp_findate" size=8 readonly> 
+				<img id=calendar_img src="../images/calendar.png" height=30 onclick="calendar2()">
 			</td>
 		</tr>
 		<tr>
@@ -84,6 +81,16 @@
 			<td><input type="text" name="sp_etccnt" size="20" value="0">명</td>
 			<td><input type="text" name="sp_etcpay" size="20" value="0">%</td>
 		</tr>
+		<tr>
+			<th>모집시작</th>
+			<td>신청날짜로 자동 등록됩니다.</td>
+		</tr>
+		<tr>
+			<th>모집마감</th>
+			<td colspan="2"><input type="text" id="sp_enddate" name="sp_enddate" size=8 readonly> 
+			<img id=calendar_img src="../images/calendar.png" height=30
+				onclick="calendar1()"></td>
+		</tr>
 	</table>
 
 	<DIV class='bottom' style="float: right;">
@@ -95,6 +102,44 @@
 <!-- body end -------------------------------------->
 
 <script type="text/javascript" src="../js/calendar.js"></script>
+
+<script>
+	//달력 팝업
+	function calendar2() {
+
+		var sx = parseInt(screen.width);
+		var sy = parseInt(screen.height);
+		var x = (sx / 2) + 50;
+		var y = (sy / 2) - 25;
+		
+		var win = window.open("../calendar/calendar2_sproject.jsp", "calendarwin",
+				"width=280, height=200");
+		
+		win.moveTo(x, y); //화면이동
+	}
+	
+	function calendar1() {
+
+		var sx = parseInt(screen.width);
+		var sy = parseInt(screen.height);
+		var x = (sx / 2) + 50;
+		var y = (sy / 2) - 25;
+		
+		var win = window.open("../calendar/calendar1_sproject.jsp", "calendarwin",
+				"width=280, height=200");
+		
+		win.moveTo(x, y); //화면이동
+	}
+</script>
+
+
+
+
+
+
+
+
+
 
 <script>
 	var config = {

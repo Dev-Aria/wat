@@ -7703,39 +7703,6 @@ html, body {
 }
 
 /* ========================================================== */
-/* 프로젝트 */
-.navbar-inverse-project {
-	background-color: #222222;
-	border-color: #c0c0c0;
-}
-
-.navbar-nav-project {
-	margin: 6.5px -15px;
-}
-
-.navbar-nav-project>li>a {
-	padding-top: 5px;
-	padding-bottom: 5px;
-	line-height: 10px;
-}
-
-/* 프로젝트/스터디 */
-.Local-tab {
-	position: relative;
-	width: 100%;
-	padding: 20px 0;
-	text-align: center;
-}
-
-.Local-tab .conTab .tab {
-	position: relative;
-	width: 547px;
-	height: 30px;
-	margin: 50px auto 30px;
-	background: #f7f7f7;
-	border: 1px solid #dfdfdf;
-}
-
 /* 클릭된 탭에 대한 css 효과 주기 */
 .Local-tab .conTab .tab .active-tab {
 	width: 143px;
@@ -7829,3 +7796,5 @@ html, body {
 #login-dp .form-group {
 	margin-bottom: 10px;
 }
+
+/* ========================================================== */

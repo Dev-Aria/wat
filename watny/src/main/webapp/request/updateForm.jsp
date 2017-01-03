@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="../header.jsp"%>
-<%@ include file="../sProLeftTemp.jsp" %>
+<%@ include file="../sProLeftTemp.jsp"%>
 <%
 	request.setCharacterEncoding("utf-8");
 %>
@@ -14,58 +14,76 @@
 <script type="text/javascript" charset="utf-8"
 	src="${pageContext.request.contextPath}/daumOpenEditor/js/editor_loader.js"></script>
 <script src="../js/jquery.js"></script>
-					<h3 style="text-align: center;">프로젝트의뢰 수정</h3>
-					<FORM name='frm' method='POST'
-						action='./update.do?rq_no=${dto.rq_no}'>
-						<div class='table'>
-							<table class='table' >
-								<tr>
-									<th>No.</th>
-									<td>${dto.rq_no }</td>
-								</tr>
-								<tr>
-									<th>의뢰인</th>
-									<td>${dto.rq_id }</td>
-								</tr>
-								<tr>
-									<th>제목</th>
-									<td><input type="text" name="rq_title" size="20"
-										value=${dto.rq_title }></td>
-								</tr>
-								<tr>
-									<th>내용</th>
-			<td colspan="2"><%@ include
-					file="../daumOpenEditor/editor_frame.jsp"%></td>
-								</tr>
-								<tr>
-									<th>탬플릿</th>
-									<td><input type="text" name="rq_templete" size="20"
-										value=${dto.rq_templete }></td>
-								</tr>
-								<tr>
-									<th>팀장모집시작</th>
-									<td>${dto.rq_newdate }</td>
-								</tr>
-								<tr>
-									<th>팀장모집마감</th>
-									<td><input type="text" name="rq_enddate" size="20"
-										value=${dto.rq_enddate }></td>
-								</tr>
-								<tr>
-									<th>진행상태</th>
-									<td><c:choose>
-										<c:when test="${dto.rq_state==0 }"> 모집중 </c:when>
-										<c:when test="${dto.rq_state==1 }"> 개발중 </c:when>
-										<c:when test="${dto.rq_state==2 }"> 완료 </c:when>
-										</c:choose></td>
-								</tr>
-							</table>
-						</div>
-						<div class='bottom' style="float: right;">
-							<input type='submit' class="btn btn-default" value='수정진행' onclick="return saveContent();"> 
-						</div>
-					</FORM>
+<h3 style="text-align: center;">프로젝트의뢰 수정</h3>
+<FORM name='frm' method='POST' action='./update.do?rq_no=${dto.rq_no}'>
+	<div class='table'>
+		<table class='table'>
+			<tr>
+				<th>No.</th>
+				<td>${dto.rq_no }</td>
+			</tr>
+			<tr>
+				<th>의뢰인</th>
+				<td>${dto.rq_id }</td>
+			</tr>
+			<tr>
+				<th>제목</th>
+				<td><input type="text" name="rq_title" size="50"
+					value="${dto.rq_title }"></td>
+			</tr>
+			<tr>
+				<th>내용</th>
+			<td colspan="2">
+			<textarea rows="10" cols="55" name="rq_content">${dto.rq_content }
+					</textarea></td>
+			</tr>
+			<tr>
+				<th>탬플릿</th>
+				<td><input type="text" name="rq_templete" size="20"
+					value=${dto.rq_templete }></td>
+			</tr>
+			<tr>
+				<th>팀장모집기간</th>
+				<td colspan="2">${dto.rq_newdate } ~ <input type="text" id="rq_enddate"
+					name="rq_enddate" size=8 value=${dto.rq_enddate } readonly>
+					<img id=calendar_img src="../images/calendar.png" height=30
+					onclick="calendar1()"></td>
 
+			</tr>
+			<tr>
+				<th>진행상태</th>
+				<td><c:choose>
+						<c:when test="${dto.rq_state==0 }"> 모집중 </c:when>
+						<c:when test="${dto.rq_state==1 }"> 개발중 </c:when>
+						<c:when test="${dto.rq_state==2 }"> 완료 </c:when>
+					</c:choose></td>
+			</tr>
+		</table>
+	</div>
+	<div class='bottom' style="float: right;">
+		<input type='submit' class="btn btn-default" value='수정진행'
+			onclick="return saveContent();">
+	</div>
+</FORM>
+
+
+<script type="text/javascript" src="../js/calendar.js"></script>
+
+<script>
+	//달력 팝업	
+	function calendar1() {
+
+		var sx = parseInt(screen.width);
+		var sy = parseInt(screen.height);
+		var x = (sx / 2) + 50;
+		var y = (sy / 2) - 25;
+
+		var win = window.open("../calendar/calendar1_request.jsp",
+				"calendarwin", "width=280, height=200");
+
+		win.moveTo(x, y); //화면이동
+	}
+</script>
 <script>
 	var config = {
 		txHost : '', /* 런타임 시 리소스들을 로딩할 때 필요한 부분으로, 경로가 변경되면 이 부분 수정이 필요. ex) http://xxx.xxx.com */

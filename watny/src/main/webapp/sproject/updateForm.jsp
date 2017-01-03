@@ -38,22 +38,26 @@
 			<tr>
 				<th>제목</th>
 				<td colspan="2"><input type="text" name="sp_title" size="50"
-					value=${dto.sp_title }></td>
+					value="${dto.sp_title }"></td>
 			</tr>
 			<tr>
 				<th>내용</th>
-				<td colspan="2"><%@ include
-						file="../daumOpenEditor/editor_frame.jsp"%></td>
+				<td colspan="2">
+						<textarea rows="10" cols="55" name="sp_content">${dto.sp_content }
+					</textarea></td>
 			</tr>
 
 			<tr>
 				<th>개발기간</th>
-				<td><input type="text" name="sp_startdate" size="20"></td>
-				<td><input type="text" name="sp_findate" size="20"></td>
+				<td colspan="2">
+					<input type="text" id="sp_startdate" name="sp_startdate" size=8 value=${dto.sp_startdate } readonly> 
+					~<input type="text"	id="sp_findate" name="sp_findate" size=8 value=${dto.sp_findate } readonly> 
+					<img id=calendar_img src="../images/calendar.png" height=30 onclick="calendar2()">
+				</td>
 			</tr>
 			<tr>
-				<th colspan="2">입찰금액</th>
-				<td>원</td>
+				<th>입찰금액</th>
+				<td colspan="2">${dto.sp_pay }원</td>
 			</tr>
 			<tr>
 				<th></th>
@@ -62,29 +66,38 @@
 			</tr>
 			<tr>
 				<th>DB</th>
-				<td><input type="text" name="sp_dbcnt" size="20" value="0">명</td>
-				<td><input type="text" name="sp_dbpay" size="20" value="0">%</td>
+				<td><input type="text" name="sp_dbcnt" size="20" value=${dto.sp_dbcnt }>명</td>
+				<td><input type="text" name="sp_dbpay" size="20" value=${dto.sp_dbpay }>%</td>
 			</tr>
 			<tr>
 				<th>UI</th>
-				<td><input type="text" name="sp_uicnt" size="20" value="0">명</td>
-				<td><input type="text" name="sp_uipay" size="20" value="0">%</td>
+				<td><input type="text" name="sp_uicnt" size="20" value=${dto.sp_uicnt }>명</td>
+				<td><input type="text" name="sp_uipay" size="20" value=${dto.sp_uipay }>%</td>
 			</tr>
 			<tr>
 				<th>BackEnd</th>
-				<td><input type="text" name="sp_backcnt" size="20" value="0">명</td>
-				<td><input type="text" name="sp_backpay" size="20" value="0">%</td>
+				<td><input type="text" name="sp_backcnt" size="20" value=${dto.sp_backcnt }>명</td>
+				<td><input type="text" name="sp_backpay" size="20" value=${dto.sp_backpay }>%</td>
 			</tr>
 			<tr>
 				<th>Server</th>
-				<td><input type="text" name="sp_servercnt" size="20" value="0">명</td>
-				<td><input type="text" name="sp_serverpay" size="20" value="0">%</td>
+				<td><input type="text" name="sp_servercnt" size="20" value=${dto.sp_servercnt }>명</td>
+				<td><input type="text" name="sp_serverpay" size="20" value=${dto.sp_serverpay }>%</td>
 			</tr>
 			<tr>
 				<th>ETC</th>
-				<td><input type="text" name="sp_etccnt" size="20" value="0">명</td>
-				<td><input type="text" name="sp_etcpay" size="20" value="0">%</td>
+				<td><input type="text" name="sp_etccnt" size="20" value=${dto.sp_etccnt }>명</td>
+				<td><input type="text" name="sp_etcpay" size="20" value=${dto.sp_etcpay }>%</td>
 			</tr>
+		<tr>
+			<th>모집시작</th>
+			<td>${dto.sp_newdate }</td>
+		</tr>
+		<tr>
+			<th>모집마감</th>
+			<td colspan="2"><input type="text" id="sp_enddate" name="sp_enddate" size=8 value=${dto.sp_enddate } readonly> 
+				<img id=calendar_img src="../images/calendar.png" height=30 onclick="calendar1()"></td>
+		</tr>
 		</table>
 	</div>
 	<div class='bottom' style="float: right;">
@@ -93,6 +106,36 @@
 	</div>
 </FORM>
 
+<script type="text/javascript" src="../js/calendar.js"></script>
+
+<script>
+	//달력 팝업
+	function calendar2() {
+
+		var sx = parseInt(screen.width);
+		var sy = parseInt(screen.height);
+		var x = (sx / 2) + 50;
+		var y = (sy / 2) - 25;
+		
+		var win = window.open("../calendar/calendar2.jsp", "calendarwin",
+				"width=280, height=200");
+		
+		win.moveTo(x, y); //화면이동
+	}
+	
+	function calendar1() {
+
+		var sx = parseInt(screen.width);
+		var sy = parseInt(screen.height);
+		var x = (sx / 2) + 50;
+		var y = (sy / 2) - 25;
+		
+		var win = window.open("../calendar/calendar1.jsp", "calendarwin",
+				"width=280, height=200");
+		
+		win.moveTo(x, y); //화면이동
+	}
+</script>
 <script>
 	var config = {
 		txHost : '', /* 런타임 시 리소스들을 로딩할 때 필요한 부분으로, 경로가 변경되면 이 부분 수정이 필요. ex) http://xxx.xxx.com */

@@ -13,7 +13,7 @@
 						<TABLE class='table' style="text-align: center;">
 							<tr>
 								<th>유형</th>
-								<th>번호</th>
+								<th>No.</th>
 								<th>제목</th>
 								<th>팀장</th>
 								<th>개발시작</th>

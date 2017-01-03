@@ -176,10 +176,10 @@
                 <a href="request/list.do"> 프로젝트 의뢰 </a>
               </li>
               <li>
-                <a href="#"> 프로젝트 완료 </a>
+                <a href="sproject/fin_list.do"> 프로젝트 완료 </a>
               </li>
               <li>
-                <a href="#"> 프로젝트 판매 </a>
+                <a href="sell/list.do"> 프로젝트 판매 </a>
               </li>
             </ul>
           </li>

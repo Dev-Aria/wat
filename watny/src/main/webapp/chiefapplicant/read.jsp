@@ -13,7 +13,7 @@
 						<div class='table'>
 							<table class='table' >
 								<tr>
-									<th>번호</th>
+									<th>No.</th>
 									<td>${dto.ca_no }</td>
 								</tr>
 								<tr>

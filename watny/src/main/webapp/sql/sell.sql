@@ -11,3 +11,6 @@ CREATE TABLE sell(			-- ÆÇ¸Å Tb
 	sell_downcnt	INT					not null 		default 0,
 	sell_newdate	DATETIME			null
 );
+
+
+select * from sell;

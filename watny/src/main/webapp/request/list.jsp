@@ -12,7 +12,7 @@
 					<FORM name='frm' method='POST' action='./list.do'>
 						<TABLE class='table' style="text-align: center;">
 							<tr>
-								<th style="text-align: center;">번호</th>
+								<th style="text-align: center;">No.</th>
 								<th style="text-align: center;">의뢰인</th>
 								<th style="text-align: center;">제목</th>
 								<th style="text-align: center;">등록일</th>

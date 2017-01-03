@@ -12,11 +12,11 @@ public interface RequestMapper {
 	public int create(RequestDTO dto);
 	
 	//<select id="read" resultType="RequestDTO">
-	public RequestDTO read(int sp_no);
+	public RequestDTO read(int rq_no);
 
 
 	//<delete id="delete" >
-	public int delete(int sp_no);
+	public int delete(int rq_no);
 	
 	//<update id="update">
 	public int update(RequestDTO dto);

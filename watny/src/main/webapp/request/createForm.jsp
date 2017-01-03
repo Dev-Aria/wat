@@ -24,24 +24,28 @@
 		</tr>
 		<tr>
 			<th>제목</th>
-			<td><input type="text" name="rq_title" size="20"></td>
+			<td><input type="text" name="rq_title" size="50"></td>
 		</tr>
 		<tr>
 			<th>내용</th>
-			<td colspan="2"><%@ include
-					file="../daumOpenEditor/editor_frame.jsp"%></td>
+			<td colspan="2">
+			<textarea rows="10" cols="55" name="rq_content">세부 설명을 적어주시면 됩니다.
+기준 금액/소요일/개발일정 등						
+					</textarea></td>
 		</tr>
 		<tr>
 			<th>템플릿</th>
 			<td></td>
 		</tr>
 		<tr>
-			<th>팀장 모집 시작일</th>
+			<th>모집 시작</th>
 			<td>의뢰글을 등록하는 날짜로 자동 등록됩니다.</td>
 		</tr>
 		<tr>
-			<th>팀장 모집 마감일</th>
-			<td><input type="datetime" name="rq_enddate" size="20"></td>
+			<th>모집 마감</th>
+			<td colspan="2"><input type="text" id="rq_enddate" name="rq_enddate" size=8 readonly> 
+			<img id=calendar_img src="../images/calendar.png" height=30
+				onclick="calendar1()"></td>
 		</tr>
 		<tr>
 			<th>모집상태</th>
@@ -55,21 +59,25 @@
 	</DIV>
 </FORM>
 
-<script type='text/javascript' src='fullcalendar/gcal.js'></script>
+
+<script type="text/javascript" src="../js/calendar.js"></script>
+
 <script>
-	$(document)
-			.rq_enddate(
-					function() {
-						$('#calendar')
-								.fullCalendar(
-										{
-											googleCalendarApiKey : '<392912768708-28vll2h7c1ignjogdlbg7ur8i6nl3o52.apps.googleusercontent.com>',
-											events : {
-												googleCalendarId : 'nyk930918@group.calendar.google.com'
-											}
-										});
-					});
+	//달력 팝업	
+	function calendar1() {
+
+		var sx = parseInt(screen.width);
+		var sy = parseInt(screen.height);
+		var x = (sx / 2) + 50;
+		var y = (sy / 2) - 25;
+		
+		var win = window.open("../calendar/calendar1_request.jsp", "calendarwin",
+				"width=280, height=200");
+		
+		win.moveTo(x, y); //화면이동
+	}
 </script>
+
 
 <script>
 	var config = {
