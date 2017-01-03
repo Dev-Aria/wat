@@ -79,7 +79,7 @@
 		var y = (sy / 2) - 25;
 
 		var win = window.open("../calendar/calendar1_request.jsp",
-				"calendarwin", "width=280, height=200");
+				"calendarwin", "width=420, height=300");
 
 		win.moveTo(x, y); //화면이동
 	}

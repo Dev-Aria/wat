@@ -37,7 +37,9 @@ public class SpApplyCont {
 	@RequestMapping(value = "/spapply/create.do", method = RequestMethod.GET)
 	public ModelAndView createForm(SpApplyDTO dto) {
 		ModelAndView mav = new ModelAndView();
+
 		mav.setViewName("/spapply/createForm");
+
 		mav.addObject("spa_code", dto.getSpa_code());
 		mav.addObject("spa_no", dto.getSpa_no());
 		return mav;
@@ -47,7 +49,12 @@ public class SpApplyCont {
 	public ModelAndView createProc(SpApplyDTO dto, HttpServletRequest req) {
 		ModelAndView mav = new ModelAndView();
 		int count = dao.create(dto);
-		mav.setViewName("redirect:/sproject/read.do?sp_no="+dto.getSpa_no());
+		System.out.println("sp_code : " + dto.getSpa_code());
+		if (dto.getSpa_code().equals("S")) {
+			mav.setViewName("redirect:/sproject/read_study.do?sp_no=" + dto.getSpa_no());
+		} else if (dto.getSpa_code().equals("P")) {
+			mav.setViewName("redirect:/sproject/read.do?sp_no=" + dto.getSpa_no());
+		}
 		mav.addObject("count", count);
 		return mav;
 	}// createProc() end
@@ -69,7 +76,6 @@ public class SpApplyCont {
 		mav.addObject("dto", dto);
 		return mav;
 	}// deleteForm() end
-
 
 	@RequestMapping(value = "/spapply/delete.do", method = RequestMethod.POST)
 	public ModelAndView deleteProc(SpApplyDTO dto, HttpServletRequest req) {
@@ -95,6 +101,5 @@ public class SpApplyCont {
 		int res = dao.update(dto);
 		return mav;
 	}// updateProc() end
-
 
 }

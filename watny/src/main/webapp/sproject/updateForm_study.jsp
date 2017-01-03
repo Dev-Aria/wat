@@ -14,17 +14,17 @@
 <script type="text/javascript" charset="utf-8"
 	src="${pageContext.request.contextPath}/daumOpenEditor/js/editor_loader.js"></script>
 <script src="../js/jquery.js"></script>
-<h3 style="text-align: center;">스터디/프로젝트 팀원 모집 공고 수정</h3>
-<FORM name='frm' method='POST' action='./update.do?sp_no=${dto.sp_no}'>
+<h3 style="text-align: center;">스터디 팀원 모집 공고 수정</h3>
+<FORM name='frm' method='POST' action='./update_study.do?sp_no=${dto.sp_no}'>
 	<div>
 		<table class='table'>
 			<tr>
 				<th>No.</th>
-				<td colspan="2">${dto.sp_no }</td>
+				<td colspan="5">${dto.sp_no }</td>
 			</tr>
 			<tr>
 				<th>구분</th>
-				<td colspan="2"><c:choose>
+				<td colspan="5"><c:choose>
 						<c:when test="${dto.sp_code=='S' }"> 스터디
 									</c:when>
 						<c:when test="${dto.sp_code=='P' }"> 프로젝트
@@ -33,71 +33,64 @@
 			</tr>
 			<tr>
 				<th>팀장</th>
-				<td colspan="2">${dto.sp_id }</td>
+				<td colspan="5">${dto.sp_id }</td>
 			</tr>
 			<tr>
 				<th>제목</th>
-				<td colspan="2"><input type="text" name="sp_title" size="50"
+				<td colspan="5"><input type="text" name="sp_title" size="50"
 					value="${dto.sp_title }"></td>
 			</tr>
 			<tr>
 				<th>내용</th>
-				<td colspan="2">
-						<textarea rows="10" cols="55" name="sp_content">${dto.sp_content }
+				<td colspan="5"><textarea rows="10" cols="55" name="sp_content">${dto.sp_content }
 					</textarea></td>
 			</tr>
 
 			<tr>
 				<th>개발기간</th>
-				<td colspan="2">
-					<input type="text" id="sp_startdate" name="sp_startdate" size=8 value=${dto.sp_startdate } readonly> 
-					~<input type="text"	id="sp_findate" name="sp_findate" size=8 value=${dto.sp_findate } readonly> 
-					<img id=calendar_img src="../images/calendar.png" height=30 onclick="calendar2()">
+				<td colspan="5"><input type="text" id="sp_startdate"
+					name="sp_startdate" size=8 value=${dto.sp_startdate } readonly>
+					~<input type="text" id="sp_findate" name="sp_findate" size=8
+					value=${dto.sp_findate } readonly> <img id=calendar_img
+					src="../images/calendar.png" height=30 onclick="calendar2()">
 				</td>
 			</tr>
 			<tr>
-				<th>입찰금액</th>
-				<td colspan="2">${dto.sp_pay }원</td>
+				<th rowspan="5">T.O(명)</th>
+				<th style="text-align: center;">DB</th>
+				<th style="text-align: center;">UI</th>
+				<th style="text-align: center;">BackEnd</th>
+				<th style="text-align: center;">Server</th>
+				<th style="text-align: center;">ETC</th>
 			</tr>
 			<tr>
-				<th></th>
-				<th>T.O(명)</th>
-				<th>보수(%)</th>
+				<td style="text-align: center;"><input type="text"
+					name="sp_dbcnt" size="1" value=${dto.sp_dbcnt }
+					style="text-align: center;"></td>
+				<td style="text-align: center;"><input type="text"
+					name="sp_uicnt" size="1" value=${dto.sp_uicnt }
+					style="text-align: center;"></td>
+				<td style="text-align: center;"><input type="text"
+					name="sp_backcnt" size="1" value=${dto.sp_backcnt }
+					style="text-align: center;"></td>
+				<td style="text-align: center;"><input type="text"
+					name="sp_servercnt" size="1" value=${dto.sp_servercnt }
+					style="text-align: center;"></td>
+				<td style="text-align: center;"><input type="text"
+					name="sp_etccnt" size="1" value=${dto.sp_etccnt }
+					style="text-align: center;"></td>
 			</tr>
 			<tr>
-				<th>DB</th>
-				<td><input type="text" name="sp_dbcnt" size="20" value=${dto.sp_dbcnt }>명</td>
-				<td><input type="text" name="sp_dbpay" size="20" value=${dto.sp_dbpay }>%</td>
+				<th>모집시작</th>
+				<td colspan="5">${dto.sp_newdate }</td>
 			</tr>
 			<tr>
-				<th>UI</th>
-				<td><input type="text" name="sp_uicnt" size="20" value=${dto.sp_uicnt }>명</td>
-				<td><input type="text" name="sp_uipay" size="20" value=${dto.sp_uipay }>%</td>
+				<th>모집마감</th>
+				<td colspan="5"><input type="text" id="sp_enddate"
+					name="sp_enddate" size=8 readonly value=${dto.sp_enddate }>
+					<img id=calendar_img src="../images/calendar.png" height=30
+					onclick="calendar1()"></td>
 			</tr>
-			<tr>
-				<th>BackEnd</th>
-				<td><input type="text" name="sp_backcnt" size="20" value=${dto.sp_backcnt }>명</td>
-				<td><input type="text" name="sp_backpay" size="20" value=${dto.sp_backpay }>%</td>
-			</tr>
-			<tr>
-				<th>Server</th>
-				<td><input type="text" name="sp_servercnt" size="20" value=${dto.sp_servercnt }>명</td>
-				<td><input type="text" name="sp_serverpay" size="20" value=${dto.sp_serverpay }>%</td>
-			</tr>
-			<tr>
-				<th>ETC</th>
-				<td><input type="text" name="sp_etccnt" size="20" value=${dto.sp_etccnt }>명</td>
-				<td><input type="text" name="sp_etcpay" size="20" value=${dto.sp_etcpay }>%</td>
-			</tr>
-		<tr>
-			<th>모집시작</th>
-			<td>${dto.sp_newdate }</td>
-		</tr>
-		<tr>
-			<th>모집마감</th>
-			<td colspan="2"><input type="text" id="sp_enddate" name="sp_enddate" size=8 readonly value=${dto.sp_enddate }> 
-				<img id=calendar_img src="../images/calendar.png" height=30 onclick="calendar1()"></td>
-		</tr>
 		</table>
 	</div>
 	<div class='bottom' style="float: right;">
@@ -116,23 +109,23 @@
 		var sy = parseInt(screen.height);
 		var x = (sx / 2) + 50;
 		var y = (sy / 2) - 25;
-		
-		var win = window.open("../calendar/calendar2_sproject.jsp", "calendarwin",
-				"width=280, height=200");
-		
+
+		var win = window.open("../calendar/calendar2_sproject.jsp",
+				"calendarwin", "width=420, height=300");
+
 		win.moveTo(x, y); //화면이동
 	}
-	
+
 	function calendar1() {
 
 		var sx = parseInt(screen.width);
 		var sy = parseInt(screen.height);
 		var x = (sx / 2) + 50;
 		var y = (sy / 2) - 25;
-		
-		var win = window.open("../calendar/calendar1_sproject.jsp", "calendarwin",
-				"width=280, height=200");
-		
+
+		var win = window.open("../calendar/calendar1_sproject.jsp",
+				"calendarwin", "width=420, height=300");
+
 		win.moveTo(x, y); //화면이동
 	}
 </script>

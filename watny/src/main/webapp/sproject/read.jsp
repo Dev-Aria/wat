@@ -8,7 +8,7 @@
 
 <!-- body start -------------------------------------->
 
-<h3 style="text-align: center;">모집공고 상세보기</h3>
+<h3 style="text-align: center;">프로젝트 모집공고 상세보기</h3>
 <FORM name='frm' method='POST' action='./update.do'>
 	<div class='table'>
 		<table class='table'>
@@ -19,12 +19,7 @@
 			</tr>
 			<tr>
 				<th>구분</th>
-				<td colspan="2"><c:choose>
-						<c:when test="${dto.sp_code=='S' }"> 스터디
-									</c:when>
-						<c:when test="${dto.sp_code=='P' }"> 프로젝트
-									</c:when>
-					</c:choose></td>
+				<td colspan="2">프로젝트</td>
 			</tr>
 			<tr>
 				<th>팀장</th>

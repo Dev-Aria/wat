@@ -35,8 +35,14 @@
 										<c:when test="${dto.sp_code=='P' }"> 프로젝트 </c:when>
 										</c:choose></td>
 									<td>${dto.sp_no }</td>
+									<c:if test="${dto.sp_code=='S' }">									
+									<td><a href="./read_study.do?sp_no=${dto.sp_no }">${dto.sp_title }</a>
+									</td>
+									</c:if>
+									<c:if test="${dto.sp_code=='P' }">									
 									<td><a href="./read.do?sp_no=${dto.sp_no }">${dto.sp_title }</a>
 									</td>
+									</c:if>
 									<td>${dto.sp_id }</td>
 									<td>${dto.sp_startdate }</td>
 									<td>${dto.sp_findate }</td>
@@ -59,7 +65,7 @@
 
 						<DIV class='bottom' style="float: right;">
 							<input type='button' class="btn btn-default" value='새글작성'
-								onclick="location.href='./create.do?sp_code=S'">
+								onclick="location.href='./create_study.do?'">
 						</DIV>
 					</FORM>
 

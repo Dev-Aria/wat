@@ -15,21 +15,19 @@
 <script type="text/javascript" charset="utf-8"
 	src="${pageContext.request.contextPath}/daumOpenEditor/js/editor_loader.js"></script>
 <script src="../js/jquery.js"></script>
-<h3 style="text-align: center;">스터디/프로젝트 팀원 모집글 작성</h3>
+<h3 style="text-align: center;">프로젝트 팀원 모집글 작성</h3>
 <FORM name="frm" method="post" action="./create.do">
-<input type="hidden" name="sp_code" value="${sp_code }">
+<input type="hidden" name="sp_id" value="${dto.sp_id }">
+<input type="hidden" name="sp_code" value="P">
 	<table class='table'>
 		<tr>
 			<th>구분</th>
-			<td colspan="2">
-			<c:choose>
-					<c:when test="${sp_code=='S' }"> 
-						스터디
-									</c:when>
-					<c:when test="${sp_code=='P' }"> 프로젝트
-									</c:when>
-				</c:choose> 
+			<td colspan="2">프로젝트
 			</td>
+		</tr>
+		<tr>
+			<th>팀장</th>
+			<td colspan="2">세션아이디</td>
 		</tr>
 		<tr>
 			<th>제목</th>
@@ -54,7 +52,7 @@
 		</tr>
 		<tr>
 			<th>입찰금액</th>
-			<td>원</td>
+			<td>${dto.sp_pay }원</td>
 		</tr>
 		<tr>
 			<th></th>
@@ -118,7 +116,7 @@
 		var y = (sy / 2) - 25;
 		
 		var win = window.open("../calendar/calendar2_sproject.jsp", "calendarwin",
-				"width=280, height=200");
+				"width=420, height=300");
 		
 		win.moveTo(x, y); //화면이동
 	}
@@ -131,7 +129,7 @@
 		var y = (sy / 2) - 25;
 		
 		var win = window.open("../calendar/calendar1_sproject.jsp", "calendarwin",
-				"width=280, height=200");
+				"width=420, height=300");
 		
 		win.moveTo(x, y); //화면이동
 	}
