@@ -59,7 +59,7 @@
 
 						<DIV class='bottom' style="float: right;">
 							<input type='button' class="btn btn-default" value='새글작성'
-								onclick="location.href='./create.do'">
+								onclick="location.href='./create.do?sp_code=S'">
 						</DIV>
 					</FORM>
 

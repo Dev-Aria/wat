@@ -17,14 +17,19 @@
 <script src="../js/jquery.js"></script>
 <h3 style="text-align: center;">스터디/프로젝트 팀원 모집글 작성</h3>
 <FORM name="frm" method="post" action="./create.do">
-
+<input type="hidden" name="sp_code" value="${sp_code }">
 	<table class='table'>
 		<tr>
 			<th>구분</th>
-			<td colspan="2"><select name="sp_code">
-					<option value="S">스터디</option>
-					<option value="P">프로젝트</option>
-			</select></td>
+			<td colspan="2">
+			<c:choose>
+					<c:when test="${sp_code=='S' }"> 
+						스터디
+									</c:when>
+					<c:when test="${sp_code=='P' }"> 프로젝트
+									</c:when>
+				</c:choose> 
+			</td>
 		</tr>
 		<tr>
 			<th>제목</th>

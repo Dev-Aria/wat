@@ -95,7 +95,7 @@
 		</tr>
 		<tr>
 			<th>모집마감</th>
-			<td colspan="2"><input type="text" id="sp_enddate" name="sp_enddate" size=8 value=${dto.sp_enddate } readonly> 
+			<td colspan="2"><input type="text" id="sp_enddate" name="sp_enddate" size=8 readonly value=${dto.sp_enddate }> 
 				<img id=calendar_img src="../images/calendar.png" height=30 onclick="calendar1()"></td>
 		</tr>
 		</table>
@@ -117,7 +117,7 @@
 		var x = (sx / 2) + 50;
 		var y = (sy / 2) - 25;
 		
-		var win = window.open("../calendar/calendar2.jsp", "calendarwin",
+		var win = window.open("../calendar/calendar2_sproject.jsp", "calendarwin",
 				"width=280, height=200");
 		
 		win.moveTo(x, y); //화면이동
@@ -130,7 +130,7 @@
 		var x = (sx / 2) + 50;
 		var y = (sy / 2) - 25;
 		
-		var win = window.open("../calendar/calendar1.jsp", "calendarwin",
+		var win = window.open("../calendar/calendar1_sproject.jsp", "calendarwin",
 				"width=280, height=200");
 		
 		win.moveTo(x, y); //화면이동
